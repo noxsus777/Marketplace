@@ -1,0 +1,112 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Jewel & Luxury)",
+  "vibe": "Premium, luxurious, modern, exclusive, cinematic.",
+  "typography": {
+    "heading_font": "Playfair Display",
+    "body_font": "Outfit",
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl+ tracking-tighter font-light",
+      "h2": "text-4xl sm:text-5xl tracking-tight font-light",
+      "h3": "text-2xl sm:text-3xl tracking-tight font-light",
+      "overline": "text-xs tracking-[0.2em] uppercase font-bold text-[#D4AF37]",
+      "body": "text-base sm:text-lg text-slate-400 leading-relaxed"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#050914",
+      "secondary": "#0A0F1F",
+      "accent": "#1A2235"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "muted": "#71717A"
+    },
+    "brand": {
+      "gold": "#D4AF37",
+      "bronze": "#B58863",
+      "silver": "#E2E8F0"
+    }
+  },
+  "layout_and_spacing": {
+    "philosophy": "Generous spacing. BENTO grid for features. Asymmetrical layouts for testimonials.",
+    "bento_grid": "grid-cols-1 md:grid-cols-12 gap-8",
+    "padding": "p-12 to p-24 for main sections",
+    "border_radius": "rounded-3xl for main cards, rounded-full for buttons"
+  },
+  "surface_strategies": {
+    "glassmorphism": "backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]",
+    "glow_effects": "Subtle inset shadows and blur-md behind borders for 'tracing beam' look."
+  },
+  "components": {
+    "buttons": "Shadcn based. Primary CTA: solid gold bg text-black font-semibold rounded-full hover:scale-105 transition-transform. Secondary: glassmorphism, rounded-full.",
+    "cards": "Glassmorphism with 1px border-white/10. No solid gray/muddy background. Hover: slight lift (-translate-y-1) and increased border glow (border-[#D4AF37]/30).",
+    "header": "Fixed, Crystal Glass style: backdrop-blur-2xl bg-[#050914]/60 border-b border-white/10 z-50",
+    "footer": "Massive spacing (py-32), massive brand logo text (text-[8vw] Playfair Display font-light text-white/5)."
+  },
+  "media_and_images": [
+    {
+      "category": "hero_background",
+      "url": "https://images.unsplash.com/photo-1707730376818-a7a02fe896d5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwyfHxkYXJrJTIwbW9vZHklMjBhYnN0cmFjdCUyMDNkJTIwbWV0YWxsaWMlMjByZW5kZXJ8ZW58MHx8fHwxNzc1OTkzMjQyfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract curvy dark background to use as hero section background layer, with opacity (e.g., bg-black/60 overlay) to let the glowing curves shine through."
+    },
+    {
+      "category": "hero_sphere_object",
+      "url": "https://images.unsplash.com/photo-1691137493205-111951566e72?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHw0fHxkYXJrJTIwbW9vZHklMjBhYnN0cmFjdCUyMDNkJTIwbWV0YWxsaWMlMjByZW5kZXJ8ZW58MHx8fHwxNzc1OTkzMjQyfDA&ixlib=rb-4.1.0&q=85",
+      "description": "A close up 3D metallic object (sphere-like) for the 'Premium Sphere' hero or feature visual."
+    },
+    {
+      "category": "feature_texture",
+      "url": "https://images.unsplash.com/photo-1766941288512-94a057e71d43?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwyfHxkYXJrJTIwc2xhdGUlMjB0ZXh0dXJlJTIwbWlkbmlnaHQlMjBibHVlfGVufDB8fHx8MTc3NTk5MzI0Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Dark blue gradient background for the Pricing or CTA section."
+    },
+    {
+      "category": "testimonial_avatar_1",
+      "url": "https://images.unsplash.com/photo-1655249481446-25d575f1c054?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMGhlYWRzaG90JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzc1OTkzMjMzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Professional headshot for testimonial 1."
+    },
+    {
+      "category": "testimonial_avatar_2",
+      "url": "https://images.unsplash.com/photo-1762522927402-f390672558d8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMGhlYWRzaG90JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzc1OTkzMjMzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Professional headshot for testimonial 2."
+    },
+    {
+      "category": "testimonial_avatar_3",
+      "url": "https://images.unsplash.com/photo-1655249493799-9cee4fe983bb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMGhlYWRzaG90JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzc1OTkzMjMzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Professional headshot for testimonial 3."
+    },
+    {
+      "category": "sponsor_logo_1",
+      "url": "https://images.unsplash.com/photo-1774271694290-9edc62c53099?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHw0fHxtaW5pbWFsaXN0JTIwYnJhbmQlMjBsb2dvJTIwdHlwb2dyYXBoeXxlbnwwfHx8fDE3NzU5OTMyMzN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Minimalist brand logo typography 1"
+    },
+    {
+      "category": "sponsor_logo_2",
+      "url": "https://images.unsplash.com/photo-1769984867572-10dea95bd4f1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwYnJhbmQlMjBsb2dvJTIwdHlwb2dyYXBoeXxlbnwwfHx8fDE3NzU5OTMyMzN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Minimalist brand logo typography 2"
+    },
+    {
+      "category": "sponsor_logo_3",
+      "url": "https://images.unsplash.com/photo-1746046804016-569faa9c58c2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwyfHxtaW5pbWFsaXN0JTIwYnJhbmQlMjBsb2dvJTIwdHlwb2dyYXBoeXxlbnwwfHx8fDE3NzU5OTMyMzN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Minimalist brand logo typography 3"
+    }
+  ],
+  "accessibility_and_testing": {
+    "testing_attributes": "All interactive elements MUST include data-testid. Examples: data-testid='hero-cta-button', data-testid='pricing-plan-pro', data-testid='nav-link-features'.",
+    "contrast": "Ensure pure white text on dark blue/black backgrounds passes APCA requirements. Never use pure #000000; use #050914."
+  },
+  "instructions_to_main_agent": [
+    "Install specific fonts via Google Fonts: Playfair Display and Outfit.",
+    "Install dependencies: framer-motion, lucide-react.",
+    "Implement 'Lenis' for smooth scrolling (optional but highly recommended for luxury feel).",
+    "Hero Section: Full screen height (min-h-screen). Use 'hero_background' as the absolute positioned bg with object-cover and opacity-40, sitting behind a dark gradient overlay.",
+    "Sponsors/Logos Section: Use a slow, infinite marquee (e.g. framer-motion or react-fast-marquee) displaying the sponsor_logos. Apply grayscale/invert or heavy contrast if necessary to blend with dark mode.",
+    "Features Section: Use a Bento Grid (Tetris Mode A). Include asymmetric cards. One card can span 8 cols, another 4. Use the 'hero_sphere_object' in one of the tall cards.",
+    "Pricing: 3 tiers. Highlight the middle 'Premium' tier by making its card background lighter (bg-white/10) and adding a subtle golden inner glow via box-shadow.",
+    "Testimonials: Do NOT center-align the grid perfectly. Offset cards slightly or use a masonry-style layout.",
+    "Do NOT use raw Shadcn Card components if they feel too boxy; instead, wrap content in standard divs with the defined glassmorphism and padding classes (p-8 to p-12).",
+    "All components should be in .js/.jsx, NOT TypeScript."
+  ]
+}

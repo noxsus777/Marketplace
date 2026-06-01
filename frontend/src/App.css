@@ -1,0 +1,100 @@
+.heading-font { font-family: 'Playfair Display', serif; }
+
+/* Badge */
+.badge-hot { background: #e74c3c; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.badge-new { background: #6c5ce7; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.badge-deal { background: #f39c12; color: #000; font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+
+/* Product card */
+.product-card {
+  background: #16161f;
+  border: 1px solid #2a2a3a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.product-card:hover {
+  border-color: #6c5ce7;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(108, 92, 231, 0.15);
+}
+
+/* Carousel */
+.carousel-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.carousel-container::-webkit-scrollbar { display: none; }
+
+/* Category card */
+.category-card {
+  background: #16161f;
+  border: 1px solid #2a2a3a;
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.category-card:hover {
+  border-color: #6c5ce7;
+  background: #1c1c28;
+  transform: translateY(-2px);
+}
+
+/* Hero Banner */
+.hero-banner {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Glass */
+.glass-nav {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(10, 10, 15, 0.85);
+  border-bottom: 1px solid rgba(42, 42, 58, 0.5);
+}
+
+/* Discount badge on card */
+.discount-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #e74c3c;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* Trust badges */
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #16161f;
+  border: 1px solid #2a2a3a;
+  border-radius: 12px;
+}
+
+/* Pulse animation */
+@keyframes pulse-accent {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(108, 92, 231, 0); }
+}
+.animate-pulse-accent { animation: pulse-accent 2s ease-in-out infinite; }
+
+/* Fade in */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp { animation: fadeInUp 0.6s ease-out forwards; }
