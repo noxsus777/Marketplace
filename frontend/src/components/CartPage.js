@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Trash2, ShoppingCart, ArrowLeft, ChevronRight } from "lucide-react";
+import { Trash2, ShoppingCart, ArrowLeft, ChevronRight, MessageCircle } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCart } from "@/contexts/CartContext";
 import API from "@/lib/api";
