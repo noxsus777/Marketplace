@@ -73,8 +73,8 @@ const HomePage = () => {
             API.get("/categories"),
           ]);
           if (!cancelled) {
-            setProducts(prodRes.data.products);
-            setCategories(catRes.data);
+            setProducts(prodRes.data?.products || []);
+            setCategories(catRes.data || []);
             setLoading(false);
             setWakingUp(false);
           }
@@ -97,11 +97,11 @@ const HomePage = () => {
     return () => { cancelled = true; };
   }, []);
 
-  const bestSellers = products.filter((p) => p.best_seller);
-  const featured = products.filter((p) => p.featured);
-  const gaming = products.filter((p) => p.category === "Gaming");
-  const subs = products.filter((p) => p.category === "Subscriptions");
-  const giftCards = products.filter((p) => p.category === "Gift Cards");
+  const bestSellers = (products || []).filter((p) => p.best_seller);
+  const featured = (products || []).filter((p) => p.featured);
+  const gaming = (products || []).filter((p) => p.category === "Gaming");
+  const subs = (products || []).filter((p) => p.category === "Subscriptions");
+  const giftCards = (products || []).filter((p) => p.category === "Gift Cards");
 
   if (loading) {
     return (
