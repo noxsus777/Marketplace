@@ -57,23 +57,44 @@ const HomePage = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [retryCount, setRetryCount] = useState(0);
+  const [wakingUp, setWakingUp] = useState(false);
 
   useEffect(() => {
+    let cancelled = false;
+    let attempt = 0;
+    const maxAttempts = 10;
+
     const load = async () => {
-      try {
-        const [prodRes, catRes] = await Promise.all([
-          API.get("/products?limit=50"),
-          API.get("/categories"),
-        ]);
-        setProducts(prodRes.data.products);
-        setCategories(catRes.data);
-      } catch (e) {
-        console.error(e);
-      } finally {
-        setLoading(false);
+      while (attempt < maxAttempts) {
+        try {
+          const [prodRes, catRes] = await Promise.all([
+            API.get("/products?limit=50"),
+            API.get("/categories"),
+          ]);
+          if (!cancelled) {
+            setProducts(prodRes.data.products);
+            setCategories(catRes.data);
+            setLoading(false);
+            setWakingUp(false);
+          }
+          return;
+        } catch (e) {
+          attempt++;
+          if (!cancelled) {
+            setRetryCount(attempt);
+            if (attempt >= 2) setWakingUp(true);
+          }
+          if (attempt < maxAttempts) {
+            await new Promise(r => setTimeout(r, 5000));
+          } else {
+            if (!cancelled) setLoading(false);
+          }
+        }
       }
     };
     load();
+    return () => { cancelled = true; };
   }, []);
 
   const bestSellers = products.filter((p) => p.best_seller);
@@ -84,8 +105,38 @@ const HomePage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center pt-16">
-        <div className="w-8 h-8 border-2 border-[#6c5ce7] border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen flex flex-col items-center justify-center pt-16 gap-5">
+        <div className="w-10 h-10 border-2 border-[#6c5ce7] border-t-transparent rounded-full animate-spin" />
+        {wakingUp ? (
+          <div className="text-center">
+            <p className="text-white font-semibold mb-1">🌙 Server is waking up...</p>
+            <p className="text-[#a1a1b5] text-sm">This takes ~30 seconds on first load.</p>
+            <p className="text-[#6b6b80] text-xs mt-1">Attempt {retryCount} of 10 — please wait</p>
+            <div className="mt-3 w-48 h-1.5 bg-[#2a2a3a] rounded-full mx-auto overflow-hidden">
+              <div
+                className="h-full bg-[#6c5ce7] rounded-full transition-all duration-500"
+                style={{ width: `${(retryCount / 10) * 100}%` }}
+              />
+            </div>
+          </div>
+        ) : (
+          <p className="text-[#6b6b80] text-sm">Loading store...</p>
+        )}
+      </div>
+    );
+  }
+
+  if (products.length === 0) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center pt-16 gap-4">
+        <p className="text-white font-semibold">😴 Server didn't respond</p>
+        <p className="text-[#a1a1b5] text-sm">Please refresh the page to try again.</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="mt-2 bg-[#6c5ce7] hover:bg-[#5b4bd6] text-white px-6 py-2.5 rounded-xl text-sm font-medium transition-colors"
+        >
+          Refresh
+        </button>
       </div>
     );
   }
